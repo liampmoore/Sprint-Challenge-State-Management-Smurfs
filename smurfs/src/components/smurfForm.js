@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import {addSmurf} from '../actions/smurfActions';
 
+import {Button, TextInput, Text} from 'grommet';
 
 
 const SmurfForm = (props) => {
@@ -29,10 +30,13 @@ const SmurfForm = (props) => {
 
     return (
         <form noValidate onSubmit={(e) => {handleSubmit(e)}}>
-            <input name='name' placeholder='name' value={value.name} onChange={(e) => {handleChange(e)}}/>
-            <input name='age' placeholder='age' type='number' value={value.age} onChange={(e) => {handleChange(e)}}/>
-            <input name='height' placeholder='height' value={value.height} onChange={(e) => {handleChange(e)}}/>
-            <button>Add smurf.</button>
+            <TextInput name='name' placeholder='name' value={value.name} onChange={(e) => {handleChange(e)}}/>
+            <br/>
+            <TextInput name='age' placeholder='age' type='number' value={value.age} onChange={(e) => {handleChange(e)}}/>
+            <br/>
+            <TextInput name='height' placeholder='height' value={value.height} onChange={(e) => {handleChange(e)}}/>
+            <br/>
+           <Button color='focus' fill label='Add Smurf'/>
         </form>
     )
 }
