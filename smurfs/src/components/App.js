@@ -9,6 +9,7 @@ import {smurfReducer as reducer} from '../reducers/smurfReducer'
 
 //Components
 import SmurfList from './smurfList';
+import SmurfForm from './smurfForm';
 
 import "./App.css";
 
@@ -23,7 +24,7 @@ class App extends Component {
       <Provider store={store}>
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
-        
+        <SmurfForm />
         <SmurfList />
       </div>
       </Provider>

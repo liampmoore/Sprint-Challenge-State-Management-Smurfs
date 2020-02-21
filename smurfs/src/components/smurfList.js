@@ -6,13 +6,16 @@ import { getSmurfs } from '../actions/smurfActions'
 class smurfList extends React.Component {
 
     componentDidMount() {
-        console.log(this.props)
         this.props.getSmurfs()
     }
     render() {
         return (
             <div>
-                {(this.props.smurfs.length === 0) && <p>No smurfs!</p>}
+                {
+                    (this.error && <p>{this.error}</p>)
+                    || ((this.props.smurfs.length === 0) && <p>No smurfs!</p>)
+                    || this.props.smurfs.map(smurf => <p key={smurf.id}>{smurf.name}</p>)
+                }
             </div>
         )
     }
