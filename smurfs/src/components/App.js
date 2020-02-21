@@ -1,5 +1,19 @@
 import React, { Component } from "react";
+
+
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from "react-redux";
+
+import {smurfReducer as reducer} from '../reducers/smurfReducer'
+
 import "./App.css";
+
+
+
+const store = createStore(reducer, applyMiddleware(thunk));
+
+
 class App extends Component {
   render() {
     return (
